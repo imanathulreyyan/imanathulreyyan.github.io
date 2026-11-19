@@ -1,0 +1,49 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+:root { color-scheme: dark; @include m.theme-vars("dark"); }
+:root[data-theme="light"] { color-scheme: light; @include m.theme-vars("light"); }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  font-family: v.$font-sans;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .3s ease, color .3s ease;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { @include m.focus-ring; }
+button { font: inherit; cursor: pointer; color: inherit; background: none; border: 0; }
+ul { list-style: none; }
+
+.container { width: min(100% - 40px, v.$container); margin-inline: auto; }
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--accent); color: var(--on-accent); padding: 10px 16px; border-radius: 8px; font-weight: 600;
+  &:focus { top: 12px; }
+}
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+// Scroll progress bar
+.progress {
+  position: fixed; inset: 0 auto auto 0; height: 3px; width: 0; z-index: 60;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+// Reveal-on-scroll (JS adds .is-visible)
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}

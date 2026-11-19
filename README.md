@@ -1,8 +1,8 @@
-# Imanathul Reyyan | Data Science Portfolio
+# Imanathul Reyyan | Data Analytics Portfolio
 
 A personal portfolio website for **Imanathul Reyyan**, BSc (External) Applied Data Analytics student at the University of Colombo, Sri Lanka. It showcases my skills, data analytics projects, education and contact details.
 
-🔗 **Live site:** _add your deployed link here (GitHub Pages / Netlify / etc.)_
+🔗 **Live site:** _(https://imanathulreyyan.github.io/)_
 
 ---
 

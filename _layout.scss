@@ -1,20 +1,30 @@
 @use "variables" as v;
 @use "mixins" as m;
 
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--grad);
+  z-index: 90;
+}
+
 .nav {
   position: sticky;
   top: 0;
   z-index: 50;
   background: var(--nav-bg);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
   border-bottom: 1px solid var(--line);
 }
 .nav__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
+  height: 70px;
 }
 .nav__brand {
   display: flex;
@@ -24,28 +34,28 @@
   text-decoration: none;
   font-family: v.$font-display;
   font-weight: 700;
-  font-size: 1.1rem;
   letter-spacing: -0.01em;
 }
 .nav__mark {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  background: var(--mark);
-  color: var(--mark-ink);
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: var(--grad);
+  color: var(--on-accent);
   font-size: 0.85rem;
   font-weight: 800;
+  box-shadow: 0 6px 20px var(--orb-2);
 }
 .nav__links {
   display: none;
   position: absolute;
-  top: 68px;
+  top: 70px;
   left: 0;
   right: 0;
   flex-direction: column;
-  background: var(--bg);
+  background: var(--bg-2);
   border-bottom: 1px solid var(--line);
   padding: 8px 24px 16px;
   &.is-open { display: flex; }
@@ -53,44 +63,61 @@
     color: var(--text);
     text-decoration: none;
     font-weight: 600;
-    padding: 12px 0;
+    padding: 13px 0;
     border-bottom: 1px solid var(--line);
     &:last-child { border-bottom: 0; }
-    &:hover { color: var(--accent); }
   }
   @include m.up(md) {
     display: flex;
     position: static;
     flex-direction: row;
-    gap: 28px;
+    gap: 6px;
     padding: 0;
     border: 0;
     background: transparent;
-    a { padding: 4px 0; border: 0; font-size: 0.98rem; }
+    a {
+      padding: 8px 14px;
+      border: 0;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      transition: background 0.2s, color 0.2s;
+      &:hover, &.is-active { color: var(--text); background: var(--glass-2); }
+    }
   }
 }
 .nav__actions { display: flex; gap: 8px; }
 .icon-btn {
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--line-strong);
-  border-radius: v.$radius;
-  background: transparent;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--glass);
   color: var(--text);
   cursor: pointer;
-  transition: background 0.2s;
-  &:hover { background: var(--tint); }
+  transition: background 0.2s, transform 0.2s;
+  &:hover { background: var(--glass-2); transform: translateY(-2px); }
   svg { width: 20px; height: 20px; }
 }
-.nav__toggle {
-  @include m.up(md) { display: none; }
+.nav__toggle { @include m.up(md) { display: none; } }
+
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.25s, transform 0.25s;
+  &.is-visible { opacity: 1; pointer-events: auto; transform: none; }
 }
 
 .footer {
   border-top: 1px solid var(--line);
-  padding: 28px 0;
+  padding: 30px 0;
   color: var(--muted);
   font-size: 0.95rem;
 }
@@ -108,12 +135,12 @@
   transform: translate(-50%, 24px);
   background: var(--text);
   color: var(--bg);
-  padding: 12px 20px;
-  border-radius: v.$radius;
-  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 700;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s, transform 0.25s;
-  z-index: 80;
+  z-index: 95;
   &.is-visible { opacity: 1; transform: translate(-50%, 0); }
 }

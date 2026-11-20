@@ -2,12 +2,13 @@
 @use "mixins" as m;
 
 :root {
-  color-scheme: light;
-  @include m.theme-vars("light");
-}
-:root[data-theme="dark"] {
   color-scheme: dark;
   @include m.theme-vars("dark");
+  --grad: linear-gradient(120deg, var(--accent), var(--accent-2));
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  @include m.theme-vars("light");
 }
 
 *,
@@ -21,7 +22,7 @@ html {
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
 body {
@@ -29,10 +30,21 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: v.$font-body;
-  font-size: 1.0625rem;
+  font-size: 1.05rem;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+// Soft colour orbs and a faint grid sit behind everything
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(640px 480px at 12% -5%, var(--orb-1), transparent 70%),
+    radial-gradient(720px 540px at 92% 8%, var(--orb-2), transparent 70%),
+    radial-gradient(600px 460px at 50% 105%, var(--orb-1), transparent 70%);
 }
 
 h1, h2, h3 {
@@ -41,8 +53,8 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
   margin: 0;
 }
-h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); font-weight: 700; }
-h3 { font-size: 1.2rem; font-weight: 700; }
+h2 { font-size: clamp(1.9rem, 3.8vw, 2.9rem); font-weight: 700; }
+h3 { font-size: 1.15rem; font-weight: 700; }
 p { margin: 0 0 1em; }
 a { color: var(--accent); }
 img { max-width: 100%; display: block; }
@@ -56,15 +68,30 @@ button:focus-visible,
   position: absolute;
   left: 16px;
   top: -60px;
-  background: var(--text);
-  color: var(--bg);
+  background: var(--accent);
+  color: var(--on-accent);
   padding: 10px 16px;
-  border-radius: v.$radius;
+  border-radius: 10px;
   z-index: 100;
   &:focus { top: 12px; }
 }
 
 .container {
-  width: min(100% - 48px, 1160px);
+  width: min(100% - 48px, 1180px);
   margin-inline: auto;
 }
+
+.grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.reveal { opacity: 1; }
+.js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }

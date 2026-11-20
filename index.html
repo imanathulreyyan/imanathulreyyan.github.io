@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,11 @@
   <meta property="og:title" content="Imanathul Reyyan | Data Analytics Portfolio">
   <meta property="og:description" content="Cleaned data, interactive dashboards and clear recommendations in Excel, SQL and Power BI.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#f2f5f1">
+  <meta name="theme-color" content="#060a14">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
   {
@@ -27,131 +27,153 @@
     "knowsAbout": ["Data analytics", "Microsoft Excel", "SQL", "Power BI", "Data visualization"]
   }
   </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="nav">
     <div class="container nav__inner">
-      <a class="nav__brand" href="#top" aria-label="Imanathul Reyyan, home">
-        <span class="nav__mark">IR</span><span>Imanathul Reyyan</span>
-      </a>
+      <a class="nav__brand" href="#top" aria-label="Imanathul Reyyan, home"><span class="nav__mark">IR</span><span>Imanathul Reyyan</span></a>
       <nav id="navLinks" class="nav__links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#process">Method</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#process">Method</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
       </nav>
       <div class="nav__actions">
-        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-        </button>
-        <button class="icon-btn nav__toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+        <button class="icon-btn nav__toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="container hero__grid">
-        <div>
-          <h1 class="hero__title">Imanathul<br>Reyyan</h1>
-          <p class="hero__lead">I clean the data, find what it says, and build the dashboard that makes the decision obvious.</p>
-          <p class="hero__study">BSc Applied Data Analytics, University of Colombo. Building 19 projects in Excel, SQL and Power BI.</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#projects">See the projects
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
-            <a class="btn btn--outline" href="https://github.com/imanathulreyyan" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn btn--outline" href="https://www.linkedin.com/in/imanathul-reyyan" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="container">
+        <div class="hero__grid">
+          <div>
+            <span class="badge"><i class="badge__dot"></i>BSc Applied Data Analytics, University of Colombo</span>
+            <p class="hero__hi">Hi, I'm</p>
+            <h1 class="hero__title"><span class="grad-text">Imanathul<br>Reyyan</span></h1>
+            <p class="hero__role">I <span class="typed" id="roleText">clean messy data</span><span class="caret" aria-hidden="true"></span></p>
+            <p class="hero__lead">I turn raw data into clear insights, interactive dashboards and recommendations people can act on. I am building a portfolio of 19 projects across Excel, SQL and Power BI, and four Excel projects are already complete.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#projects">View projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+              <a class="btn btn--ghost" href="https://github.com/imanathulreyyan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.15v3.19c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>GitHub</a>
+              <a class="btn btn--ghost" href="https://www.linkedin.com/in/imanathul-reyyan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11.5H3V9.75Zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.12v5.88h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75Z"/></svg>LinkedIn</a>
+            </div>
+          </div>
+
+          <div class="mock-wrap" id="mockWrap">
+            <div class="mock" aria-hidden="true">
+              <div class="mock__bar"><i></i><i></i><i></i><span>Portfolio dashboard</span></div>
+              <div class="mock__grid">
+                <div class="kpi"><b>$815K</b><small>Profit lost to discounts above 20%</small></div>
+                <div class="kpi"><b>26.5%</b><small>Telco customers who churned</small></div>
+                <div class="kpi"><b>8,804</b><small>Netflix titles cleaned</small></div>
+                <div class="kpi"><b>30.5%</b><small>Attrition with overtime</small></div>
+                <div class="mock__donut">
+                  <svg viewBox="0 0 100 100"><defs><linearGradient id="donutGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><circle class="track" cx="50" cy="50" r="40"/><circle class="fill" cx="50" cy="50" r="40"/></svg>
+                  <div><strong>4 of 19</strong><span>projects complete</span></div>
+                </div>
+              </div>
+            </div>
+            <span class="float float--1" aria-hidden="true">Excel</span>
+            <span class="float float--2" aria-hidden="true">SQL next</span>
+            <span class="float float--3" aria-hidden="true">Power BI</span>
           </div>
         </div>
 
-        <aside class="ledger" id="ledger" aria-label="Portfolio progress">
-          <h2 class="ledger__title">19 projects, one square each</h2>
-          <p class="ledger__sub" id="ledgerSub">Loading progress.</p>
-          <div class="ledger__rows" id="ledgerRows"></div>
-          <p class="ledger__caption" id="ledgerCaption" aria-live="polite">Gold squares are finished projects. Hover or tab to a square to see which one it is.</p>
-        </aside>
+        <div class="stats">
+          <div class="stat reveal"><b data-count data-to="4">0</b><span>Projects completed</span></div>
+          <div class="stat reveal"><b data-count data-to="19">0</b><span>Projects in the full plan</span></div>
+          <div class="stat reveal"><b data-count data-to="3">0</b><span>Tools: Excel, SQL, Power BI</span></div>
+          <div class="stat reveal"><b data-count data-to="3">0</b><span>Languages: English, Sinhala, Tamil</span></div>
+        </div>
       </div>
     </section>
 
     <section class="section" id="about">
-      <div class="container split">
-        <div class="split__head"><h2>About</h2></div>
-        <div>
-          <p class="statement">I enjoy the whole path from messy spreadsheet to a clear recommendation, and I check my work at every step.</p>
-          <dl class="facts">
-            <div><dt>Studying</dt><dd>BSc (External) in Applied Data Analytics, University of Colombo, 2026 to present</dd></div>
-            <div><dt>Background</dt><dd>Programming and statistics foundation, with applied experience in dataset design, survey development and statistical analysis</dd></div>
-            <div><dt>Building</dt><dd>19 portfolio projects: Excel, SQL, Power BI and combined end-to-end work</dd></div>
-            <div><dt>Languages</dt><dd>English (professional), Sinhala and Tamil, so I can explain findings to different audiences</dd></div>
-          </dl>
+      <div class="container">
+        <div class="head reveal"><span class="kicker">About</span><h2>Data, explained clearly</h2>
+          <p>I enjoy the whole path from messy spreadsheet to a clear recommendation, and I check my work at every step. My foundation in programming and statistics comes with applied experience in dataset design, survey development and statistical analysis.</p></div>
+        <div class="grid grid--3">
+          <div class="card reveal"><div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div><h3>Studying</h3><p>BSc (External) in Applied Data Analytics at the University of Colombo, from 2026.</p></div>
+          <div class="card reveal"><div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div><h3>Building</h3><p>19 portfolio projects: Excel, SQL, Power BI and end-to-end work that combines all three.</p></div>
+          <div class="card reveal"><div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18M3 12h18"/></svg></div><h3>Languages</h3><p>English (professional), Sinhala and Tamil, so I can explain findings to different audiences.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="process">
-      <div class="container split">
-        <div class="split__head">
-          <h2>Method</h2>
-        </div>
-        <div>
-          <p class="statement">Every project ships with a cleaning log, a dashboard, and a README with findings and limitations, so the work can be checked.</p>
-          <ol class="steps">
-            <li><h3>Clean</h3><p>Check blanks, duplicates and wrong data types, and record every fix in a cleaning log.</p></li>
-            <li><h3>Analyse</h3><p>Add helper columns, build pivot tables and compare rates, not just counts.</p></li>
-            <li><h3>Visualise</h3><p>One measure per chart, a heading that states the finding, and slicers to explore.</p></li>
-            <li><h3>Recommend</h3><p>End with a clear recommendation and honest limits: patterns, not proven causes.</p></li>
-          </ol>
+    <section class="section section--band" id="process">
+      <div class="container">
+        <div class="head reveal"><span class="kicker">Method</span><h2>The same four steps in every project</h2>
+          <p>Every project ships with a cleaning log, a dashboard, and a README with findings and limitations, so the work can be checked.</p></div>
+        <div class="grid grid--4">
+          <div class="card reveal"><div class="card__no">01</div><h3>Clean</h3><p>Check blanks, duplicates and wrong data types, and record every fix in a cleaning log.</p></div>
+          <div class="card reveal"><div class="card__no">02</div><h3>Analyse</h3><p>Add helper columns, build pivot tables and compare rates, not just counts.</p></div>
+          <div class="card reveal"><div class="card__no">03</div><h3>Visualise</h3><p>One measure per chart, a heading that states the finding, and slicers to explore.</p></div>
+          <div class="card reveal"><div class="card__no">04</div><h3>Recommend</h3><p>End with a clear recommendation and honest limits: patterns, not proven causes.</p></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="skills">
-      <div class="container split">
-        <div class="split__head"><h2>Skills</h2></div>
-        <div>
-          <div class="skill"><h3>Analysis</h3><ul class="tags"><li class="tag tag--solid">Excel</li><li class="tag tag--soon">SQL, in progress</li><li class="tag">Python</li><li class="tag">R</li></ul></div>
-          <div class="skill"><h3>Dashboards</h3><ul class="tags"><li class="tag tag--solid">Excel dashboards</li><li class="tag tag--soon">Power BI, in progress</li></ul></div>
-          <div class="skill"><h3>Excel toolkit</h3><ul class="tags"><li class="tag">Tables</li><li class="tag">PivotTables</li><li class="tag">PivotCharts</li><li class="tag">Slicers</li><li class="tag">Report Connections</li><li class="tag">IFS</li><li class="tag">SUMIFS</li><li class="tag">COUNTIFS</li><li class="tag">AVERAGEIFS</li><li class="tag">DATEVALUE</li><li class="tag">TRIM</li><li class="tag">LEFT / FIND</li><li class="tag">Go To Special</li><li class="tag">Remove Duplicates</li><li class="tag">Conditional Formatting</li></ul></div>
-          <div class="skill"><h3>Programming</h3><ul class="tags"><li class="tag">Python</li><li class="tag">C</li><li class="tag">C++</li><li class="tag">Java</li></ul></div>
-          <div class="skill"><h3>Web</h3><ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">SCSS</li><li class="tag">JavaScript</li><li class="tag">Responsive design</li></ul></div>
+      <div class="container">
+        <div class="head reveal"><span class="kicker">Skills</span><h2>Tools and languages I work with</h2>
+          <p>Excel is applied across my first four projects. SQL and Power BI are the next stage.</p></div>
+        <div class="marquee reveal" aria-hidden="true"><div class="marquee__track"><span>Excel</span><span>PivotTables</span><span>Slicers</span><span>Dashboards</span><span>SQL</span><span>Power BI</span><span>Python</span><span>R</span><span>Data cleaning</span><span>HTML</span><span>CSS</span><span>SCSS</span><span>JavaScript</span><span>Excel</span><span>PivotTables</span><span>Slicers</span><span>Dashboards</span><span>SQL</span><span>Power BI</span><span>Python</span><span>R</span><span>Data cleaning</span><span>HTML</span><span>CSS</span><span>SCSS</span><span>JavaScript</span></div></div>
+        <div class="grid grid--4">
+          <div class="card reveal"><h3>Analysis</h3><div class="chips"><span class="chip chip--done">Excel</span><span class="chip chip--soon">SQL, in progress</span><span class="chip">Python</span><span class="chip">R</span></div></div>
+          <div class="card reveal"><h3>Dashboards</h3><div class="chips"><span class="chip chip--done">Excel dashboards</span><span class="chip chip--soon">Power BI, in progress</span></div></div>
+          <div class="card reveal"><h3>Programming</h3><div class="chips"><span class="chip">Python</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">Java</span></div></div>
+          <div class="card reveal"><h3>Web</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">SCSS</span><span class="chip">JavaScript</span><span class="chip">Responsive design</span></div></div>
         </div>
+        <div class="card reveal" style="margin-top:18px"><h3 style="margin-top:0">My Excel toolkit</h3><div class="chips"><span class="chip">Tables</span><span class="chip">PivotTables</span><span class="chip">PivotCharts</span><span class="chip">Slicers</span><span class="chip">Report Connections</span><span class="chip">IFS</span><span class="chip">SUMIFS</span><span class="chip">COUNTIFS</span><span class="chip">AVERAGEIFS</span><span class="chip">DATEVALUE</span><span class="chip">TRIM</span><span class="chip">LEFT / FIND</span><span class="chip">Go To Special</span><span class="chip">Remove Duplicates</span><span class="chip">Conditional Formatting</span></div></div>
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <section class="section section--band" id="projects">
       <div class="container">
-        <div class="projects__head">
-          <h2>Projects</h2>
-          <p>Each finished project has its own GitHub repository with the workbook, dashboard, cleaning log and findings. New projects appear here as I complete them.</p>
+        <div class="head reveal"><span class="kicker">Projects</span><h2>Hands-on analysis, start to finish</h2>
+          <p>Each finished project has its own GitHub repository with the workbook, dashboard, cleaning log and findings. New projects appear here as I complete them.</p></div>
+
+        <div class="overview">
+          <div class="ledger reveal" id="ledger" aria-label="Portfolio progress">
+            <h3 class="ledger__title">19 projects, one square each</h3>
+            <p class="ledger__sub" id="ledgerSub">4 finished, 15 still to build.</p>
+            <div class="ledger__rows" id="ledgerRows"></div>
+            <p class="ledger__caption" id="ledgerCaption" aria-live="polite">Gold squares are finished projects. Hover or tab to a square to see which one it is.</p>
+          </div>
+          <div class="meter reveal">
+            <div class="meter__top"><b id="meterText">4 of 19 projects completed</b><span>Portfolio progress</span></div>
+            <div class="bar" role="progressbar" aria-label="Portfolio progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="21"><i id="meterBar"></i></div>
+            <div class="meter__cats" id="meterCats"></div>
+          </div>
         </div>
+
         <div class="filters" id="filters" role="group" aria-label="Filter projects by tool">
-          <button type="button" data-filter="All" aria-pressed="true">All</button>
-          <button type="button" data-filter="Excel" aria-pressed="false">Excel</button>
-          <button type="button" data-filter="SQL" aria-pressed="false">SQL</button>
-          <button type="button" data-filter="Power BI" aria-pressed="false">Power BI</button>
-          <button type="button" data-filter="Combined" aria-pressed="false">Combined</button>
+          <button type="button" data-filter="All" aria-pressed="true">All</button><button type="button" data-filter="Excel" aria-pressed="false">Excel</button><button type="button" data-filter="SQL" aria-pressed="false">SQL</button><button type="button" data-filter="Power BI" aria-pressed="false">Power BI</button><button type="button" data-filter="Combined" aria-pressed="false">Combined</button>
         </div>
-        <div id="projectList" aria-live="polite">
-          <noscript><p class="empty">Turn on JavaScript to see the projects, or visit <a href="https://github.com/imanathulreyyan">github.com/imanathulreyyan</a>.</p></noscript>
+        <div class="projects" id="projectList" aria-live="polite">
+          <noscript><ul class="empty">
+            <li><a href="https://github.com/imanathulreyyan/excel-superstore-sales-analysis">Global Superstore Sales &amp; Profit Analysis</a></li>
+            <li><a href="https://github.com/imanathulreyyan/excel-telco-churn-analysis">Telco Customer Churn Analysis</a></li>
+            <li><a href="https://github.com/imanathulreyyan/excel-netflix-content-analysis">Netflix Content Library Analysis</a></li>
+            <li><a href="https://github.com/imanathulreyyan/excel-hr-attrition-analysis">HR Employee Attrition Analysis</a></li>
+          </ul></noscript>
         </div>
-        <div class="next" id="nextBlock" hidden>
-          <h3 class="next__title">Coming next</h3>
-          <p class="next__intro">Planned projects. Each one starts with a business question.</p>
-          <div id="nextList"></div>
+        <div class="soon" id="nextBlock" hidden>
+          <h3 class="soon__title">Coming next</h3>
+          <p class="soon__intro">Planned projects. Each one starts with a business question.</p>
+          <div class="soon__grid" id="nextList"></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="education">
-      <div class="container split">
-        <div class="split__head"><h2>Education</h2></div>
-        <ol class="timeline">
+      <div class="container">
+        <div class="head reveal"><span class="kicker">Education</span><h2>Where I am learning</h2></div>
+        <ol class="timeline reveal">
           <li><time>2026 to present</time><h3>BSc (External) in Applied Data Analytics</h3><p>University of Colombo, Sri Lanka</p></li>
           <li><time>2023 to 2024</time><h3>Foundation in Computing</h3><p>Albukhary International University, Malaysia</p></li>
         </ol>
@@ -160,25 +182,24 @@
 
     <section class="contact" id="contact">
       <div class="container">
-        <h2>Let's talk about data</h2>
-        <p>I am open to learning opportunities, collaboration and feedback on my projects.</p>
-        <a class="contact__mail" href="mailto:imanareyyan@gmail.com">imanareyyan@gmail.com</a>
-        <div class="contact__actions">
-          <button class="btn btn--mark" id="copyEmail" type="button" data-email="imanareyyan@gmail.com">Copy email</button>
-          <a class="btn btn--band" href="https://www.linkedin.com/in/imanathul-reyyan" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn--band" href="https://github.com/imanathulreyyan" target="_blank" rel="noopener">GitHub</a>
+        <div class="cta reveal">
+          <span class="kicker">Contact</span>
+          <h2>Let's talk about data</h2>
+          <p>I am open to learning opportunities, collaboration and feedback on my projects.</p>
+          <a class="cta__mail" href="mailto:imanareyyan@gmail.com">imanareyyan@gmail.com</a>
+          <div class="cta__actions">
+            <button class="btn btn--primary" id="copyEmail" type="button" data-email="imanareyyan@gmail.com">Copy email</button>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/imanathul-reyyan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11.5H3V9.75Zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.12v5.88h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75Z"/></svg>LinkedIn</a>
+            <a class="btn btn--ghost" href="https://github.com/imanathulreyyan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.15v3.19c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>GitHub</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <span>&copy; <span id="year">2026</span> Imanathul Reyyan</span>
-      <span>Built with HTML, SCSS and JavaScript</span>
-    </div>
-  </footer>
+  <footer class="footer"><div class="container footer__inner"><span>&copy; <span id="year">2026</span> Imanathul Reyyan</span><span>Built with HTML, SCSS and JavaScript</span></div></footer>
 
+  <button class="icon-btn to-top" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="js/projects.js"></script>
   <script src="js/main.js"></script>

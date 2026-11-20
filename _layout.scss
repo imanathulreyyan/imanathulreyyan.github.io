@@ -1,0 +1,119 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  text-decoration: none;
+  font-family: v.$font-display;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+.nav__mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--mark);
+  color: var(--mark-ink);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+.nav__links {
+  display: none;
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 8px 24px 16px;
+  &.is-open { display: flex; }
+  a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    &:last-child { border-bottom: 0; }
+    &:hover { color: var(--accent); }
+  }
+  @include m.up(md) {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    gap: 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    a { padding: 4px 0; border: 0; font-size: 0.98rem; }
+  }
+}
+.nav__actions { display: flex; gap: 8px; }
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line-strong);
+  border-radius: v.$radius;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover { background: var(--tint); }
+  svg { width: 20px; height: 20px; }
+}
+.nav__toggle {
+  @include m.up(md) { display: none; }
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translate(-50%, 24px);
+  background: var(--text);
+  color: var(--bg);
+  padding: 12px 20px;
+  border-radius: v.$radius;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 80;
+  &.is-visible { opacity: 1; transform: translate(-50%, 0); }
+}

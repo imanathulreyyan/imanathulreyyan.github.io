@@ -1,0 +1,48 @@
+// Design tokens: type, layout, breakpoints and the two colour themes
+$font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+$font-body: "Figtree", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+
+$container: 1160px;
+$radius: 8px;
+
+$breakpoints: (
+  "sm": 600px,
+  "md": 860px,
+  "lg": 1100px,
+);
+
+// Each key becomes a CSS custom property (--bg, --text, ...)
+$themes: (
+  "light": (
+    "bg": #f2f5f1,
+    "surface": #ffffff,
+    "tint": #e4ece8,
+    "line": #d6dfda,
+    "line-strong": #aebdb6,
+    "text": #0e1f26,
+    "muted": #4a5d63,
+    "accent": #0a6b66,
+    "on-accent": #ffffff,
+    "mark": #f2a900,
+    "mark-ink": #0e1f26,
+    "band-bg": #0e1f26,
+    "band-text": #eaf1ef,
+    "nav-bg": rgba(242, 245, 241, 0.88),
+  ),
+  "dark": (
+    "bg": #0b1519,
+    "surface": #112228,
+    "tint": #143037,
+    "line": #223a41,
+    "line-strong": #3a565d,
+    "text": #eaf1ef,
+    "muted": #9fb4b8,
+    "accent": #4fd1c5,
+    "on-accent": #07181a,
+    "mark": #f6b93b,
+    "mark-ink": #0e1f26,
+    "band-bg": #0f3036,
+    "band-text": #eaf1ef,
+    "nav-bg": rgba(11, 21, 25, 0.88),
+  ),
+);

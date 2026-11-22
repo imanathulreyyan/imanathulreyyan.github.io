@@ -6,7 +6,7 @@ A single-page portfolio for **Imanathul Reyyan**, a BSc Applied Data Analytics s
 
 ## What the site shows
 
-- **Projects:** 4 of 19 planned projects are complete (all Excel). Each card shows the headline result, the main findings, the tools used and a link to its GitHub repository.
+- **Projects:** 5 of 19 planned projects are complete (all Excel). Each card shows the headline result, the main findings, the tools used and a link to its GitHub repository.
 - **Progress:** a one-square-per-project chart, a progress bar and a breakdown by tool (Excel, SQL, Power BI, Combined).
 - **Method:** the four steps every project follows: clean, analyse, visualise, recommend.
 - **Skills, education and contact details.**
@@ -19,12 +19,13 @@ A single-page portfolio for **Imanathul Reyyan**, a BSc Applied Data Analytics s
 | 2 | Telco Customer Churn Analysis | 26.5% of 7,043 customers churned | [excel-telco-churn-analysis](https://github.com/imanathulreyyan/excel-telco-churn-analysis) |
 | 3 | Netflix Content Library Analysis | 8,804 titles cleaned and analysed | [excel-netflix-content-analysis](https://github.com/imanathulreyyan/excel-netflix-content-analysis) |
 | 4 | HR Employee Attrition Analysis | 30.5% attrition with overtime, versus 10.4% without | [excel-hr-attrition-analysis](https://github.com/imanathulreyyan/excel-hr-attrition-analysis) |
+| 5 | Spotify Most Streamed Songs Analysis | 8.6x more streams for songs on the most playlists | [excel-spotify-streams-analysis](https://github.com/imanathulreyyan/excel-spotify-streams-analysis) |
 
 Every project includes a cleaning log, an interactive dashboard and a README with findings and limitations.
 
 ## Planned projects
 
-SQL (4): Chinook, Sakila, Northwind, Olist. Power BI (5): AdventureWorks, COVID-19, Olympics, Airbnb NYC, Sri Lanka Tourism. Combined (5): Online Retail RFM, Bank Marketing, Walmart, Zomato, World Happiness. Spotify completes the Excel set.
+SQL (4): Chinook, Sakila, Northwind, Olist. Power BI (5): AdventureWorks, COVID-19, Olympics, Airbnb NYC, Sri Lanka Tourism. Combined (5): Online Retail RFM, Bank Marketing, Walmart, Zomato, World Happiness.
 
 ## Tech
 

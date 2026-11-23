@@ -6,7 +6,7 @@ A single-page portfolio for **Imanathul Reyyan**, a BSc Applied Data Analytics s
 
 ## What the site shows
 
-- **Projects:** 5 of 19 planned projects are complete (all Excel). Each card shows the headline result, the main findings, the tools used and a link to its GitHub repository.
+- **Projects:** 6 of 19 planned projects are complete (5 Excel, 1 SQL). Each card shows the headline result, the main findings, the tools used and a link to its GitHub repository.
 - **Progress:** a one-square-per-project chart, a progress bar and a breakdown by tool (Excel, SQL, Power BI, Combined).
 - **Method:** the four steps every project follows: clean, analyse, visualise, recommend.
 - **Skills, education and contact details.**
@@ -20,12 +20,13 @@ A single-page portfolio for **Imanathul Reyyan**, a BSc Applied Data Analytics s
 | 3 | Netflix Content Library Analysis | 8,804 titles cleaned and analysed | [excel-netflix-content-analysis](https://github.com/imanathulreyyan/excel-netflix-content-analysis) |
 | 4 | HR Employee Attrition Analysis | 30.5% attrition with overtime, versus 10.4% without | [excel-hr-attrition-analysis](https://github.com/imanathulreyyan/excel-hr-attrition-analysis) |
 | 5 | Spotify Most Streamed Songs Analysis | 8.6x more streams for songs on the most playlists | [excel-spotify-streams-analysis](https://github.com/imanathulreyyan/excel-spotify-streams-analysis) |
+| 6 | Chinook Music Store Revenue Analysis | 35.5% of revenue comes from Rock | [sql-chinook-revenue-analysis](https://github.com/imanathulreyyan/sql-chinook-revenue-analysis) |
 
-Every project includes a cleaning log, an interactive dashboard and a README with findings and limitations.
+Every project includes a data check or cleaning log and a README with findings and limitations. Excel projects add an interactive dashboard; SQL projects add a commented `queries.sql` file.
 
 ## Planned projects
 
-SQL (4): Chinook, Sakila, Northwind, Olist. Power BI (5): AdventureWorks, COVID-19, Olympics, Airbnb NYC, Sri Lanka Tourism. Combined (5): Online Retail RFM, Bank Marketing, Walmart, Zomato, World Happiness.
+SQL (3 more): Sakila, Northwind, Olist. Power BI (5): AdventureWorks, COVID-19, Olympics, Airbnb NYC, Sri Lanka Tourism. Combined (5): Online Retail RFM, Bank Marketing, Walmart, Zomato, World Happiness.
 
 ## Tech
 
